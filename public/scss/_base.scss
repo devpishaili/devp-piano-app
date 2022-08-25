@@ -1,0 +1,76 @@
+$white: #fff;
+$black: #020403;
+$bgColor: #030303;
+$textColor: #333;
+$font-stack: "Poppins", sans-serif;
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  @extend %flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
+}
+
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+* {
+  font-family: inherit;
+
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+}
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+
+  @media screen and (max-width: 620px) {
+    font-size: 12px;
+  }
+}
+
+body {
+  background-color: #333;
+  font-family: $font-stack;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  @include flexCenter();
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @media screen and (max-width: 620px) {
+    transform: rotate(90deg);
+  }
+}
+
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

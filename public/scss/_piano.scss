@@ -1,0 +1,54 @@
+#piano {
+  padding: 4rem 2.5rem 0;
+  background-color: $bgColor;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+  box-shadow: 0 3px 10px #f3f3f37b;
+
+  .keyboard {
+    display: flex;
+    width: 100%;
+  }
+
+  .key {
+    height: calc(var(--width) * 3.5);
+    width: var(--width);
+    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+  }
+
+  .white {
+    --width: 5rem;
+    background-color: $white;
+    border: 1px solid $black;
+
+    &:first-of-type {
+      border-top-left-radius: 0.35rem;
+      border: 0.5px solid $black;
+      border-right: 1px solid $black;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 0.35rem;
+      border: 0.5px solid $black;
+      border-left: 1px solid $black;
+    }
+
+    &.active {
+      background-color: #ccc;
+    }
+  }
+
+  .black {
+    --width: 3.6rem;
+    background-color: $black;
+    margin: 0 calc((var((--width)) / -2));
+    z-index: 2;
+    box-shadow: 0 3px 8px #03030329;
+
+    &.active {
+      background-color: #333;
+    }
+  }
+}
